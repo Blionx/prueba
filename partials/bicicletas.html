@@ -1,0 +1,67 @@
+    <form class="well" name="bicicle" novalidate>
+        <h1>Menú de bicicletas</h1>
+        <label>Descripción de la bicicleta</label>
+        <input ng-model="newbi.name" type="text" requiered>
+        <input type="hidden" ng-model="newbi.id">    </br>
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Selección de Manubrio</th>
+                <th>Selección de llanta</th>
+                <th>Selección de Piñon</th>
+            </tr>
+        </thead>
+        <tr>
+            <td> 
+                <select ng-model="newbi.manu" requiered>
+                    <option value="">--Manubrios--</option>
+                    <option ng-repeat="manus in manu" value="{{manus.id}}">{{manus.name}}</option>
+                </select>
+            </td>
+            <td>
+                <select ng-model="newbi.llant"  requiered>
+                    <option value="">--Llantas--</option>
+                    <option ng-repeat="llantis in llanti" value="{{llantis.id}}">{{llantis.name}}</option>
+                </select>
+            </td>
+            <td>
+                <select ng-model="newbi.pinon" requiered>
+                    <option value="">--Piñones--</option>
+                    <option ng-repeat="poni in pinin" value="{{poni.id}}">{{poni.name}}</option>
+                </select>
+            </td>
+        </tr>
+        
+    </table> 
+        <br/>
+    <input type="button" value="Guardar" ng-click="bicicle.$valid && savebici()" class="btn btn-primary" />
+    </form>
+
+
+
+
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Descripción</th>
+                <th>Manubrio</th>
+                <th>Llanta</th>
+                <th>Piñon</th>
+                <th>Precio</th>
+                <th>#</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="bici in bicis">
+                <td>{{ bici.name }}</td>
+                <td>{{ bici.manuname }}</td>
+                <td>{{ bici.llantname }}</td>
+                <td>{{ bici.pinonname }}</td>
+                <td>{{ bici.price  | currency}}</td>
+                <td><input type="button" value="Editar" ng-click="editbici(bici.id)" class="btn btn-warning" />| <input type="button" value="Borrar" ng-click="deletebici(bici.id)" class="btn btn-danger" />
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

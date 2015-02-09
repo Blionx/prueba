@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="newApp">
+<head>
+  <meta charset="utf-8">
+  <title>Tienda de bicicletas</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  
+  <link rel="stylesheet" href="css/valid.css">
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="js/ui-router.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controllers2.js"></script>
+  
+
+</head>
+<body>
+
+  <div class="container">
+      <header><ul class="nav nav-pills pull-right">
+  <li ng-class="{active:opt === 1}"><a ui-sref="home" ng-click=" opt = 1">Manubrios</a></li>
+  <li ng-class="{active:opt === 2}"><a ui-sref="llantas" ng-click="opt = 2">Llantas</a></li>
+  <li ng-class="{active:opt === 3}"><a ui-sref="piñones" ng-click="opt = 3">Piñones</a></li>
+  <li ng-class="{active:opt === 4}"><a ui-sref="bicicletas" ng-click="opt = 4">Bicicletas</a></li>
+</ul>
+<h3 class="text-muted">Tienda de Bicicletas</h3>
+</header>
+</BR>
+      <div ui-view></div>
+     
+    </div>
+
+</body>
+</html>
