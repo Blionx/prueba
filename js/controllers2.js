@@ -51,29 +51,32 @@ bicontrollers.service('BiciServices', function () {
     //Guardar las Bicicletas...
 
     this.savebici = function (bici) {
+        var precmanu = 0;
+        var precllan = 0;
+        var precpin = 0;
 
                 for(var i=0; i<=bici.manu; i++){
                 if(manubs[i].id==bici.manu){
                    bici.manuname = manubs[i].name;
-                   var precmanu = manubs[i].price;
+                    precmanu = manubs[i].price;
                   
                 }
              }
              for(var i=0; i<=bici.llant; i++){
                 if(llans[i].id==bici.llant){
                    bici.llantname = llans[i].name;
-                    var precllan = llans[i].price;
+                     precllan = llans[i].price;
                    
                 }
              }
              for(var i=0; i<=bici.pinon; i++){
                 if(pins[i].id==bici.pinon){
                    bici.pinonname = pins[i].name;
-                 var precpin = pins[i].price;
+                  precpin = pins[i].price;
                 }
              }
 
-                bici.price=precmanu + precllan + precpin;
+                bici.price=precmanu + precllan + precpin+0;
        
         if (bici.id == null) {   
             bici.id = Bid++;
